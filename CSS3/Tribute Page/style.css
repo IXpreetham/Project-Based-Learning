@@ -1,108 +1,143 @@
-/******************************************************************
-Setting a base font size of 10px give us easier rem calculations
-Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
-********************************************************************/
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html {
-    /* Setting a base font size of 10px give us easier rem calculations
-       Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
-     */
-    font-size: 10px;
+/* BACKGROUND */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #333;
+  line-height: 1.7;
+  padding: 20px;
+}
+
+/* MAIN CARD */
+#main {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  animation: fadeIn 1s ease;
+}
+
+/* TITLE */
+#title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* IMAGE CARD */
+#img-div {
+  background: #fff;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+#image {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+#image:hover {
+  transform: scale(1.03);
+}
+
+#img-caption {
+  margin-top: 12px;
+  font-size: 1.4rem;
+  color: #555;
+}
+
+/* TIMELINE */
+#headline {
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+}
+
+ul {
+  max-width: 650px;
+  margin: auto;
+  text-align: left;
+}
+
+li {
+  margin: 15px 0;
+  padding-left: 15px;
+  border-left: 4px solid #667eea;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+  margin: 40px auto;
+  padding: 20px;
+  background: #f4f6ff;
+  border-left: 5px solid #667eea;
+  font-style: italic;
+  border-radius: 8px;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* LINKS */
+a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+.footer-text {
+  margin-top: 30px;
+  font-size: 1.8rem;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  body {
-    /* Native font stack https://getbootstrap.com/docs/4.2/content/reboot/#native-font-stack */
-  
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.6rem; 
-    color: #333;
-    text-align: center;
-    line-height: 1.5;
-    margin 0;
-    width: 100%; 
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  #main {
-    margin: 30px 8px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #eee;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #title {
+    font-size: 3rem;
   }
-  
-  h1 { 
-    font-size: 4rem;
-    margin-bottom: 0;
-  }
-  
-  #img-div {
-    background: white;
-    padding: 10px;
-    margin: 0;
-  }
-  
-  #image {
-    max-width: 100%;
-    display: block;
-    height: auto;
-    margin: 0 auto;   
-      
-  }
-  
-  #img-caption {
-    margin : 1.5rem 0 0.5rem 0;
-  }
-  
+
   #headline {
-    margin: 50px 0;
-    text-align: center;
-  }
-  
-  ul {
-    max-width: 550px;
-    margin: 0 auto 50px auto;
-    text-align: left;
-    line-height: 1.6;
-  }
-  
-  li {
-    margin: 1.6rem 0;
-  }
-  
-  blockquote {
-    font-style: italic;
-    max-width: 545px;
-    margin: 0 auto 50px auto;
-    text-align: left;
-  }
-  h3 {
     font-size: 2rem;
   }
-  
-  a {
-    color: #477ca7;
+
+  .footer-text {
+    font-size: 1.5rem;
   }
-  
-  a:visited {
-    color: green;
-  }
-  
-  
-  
-  /* responsive */
-  
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 3.5rem;
-      line-height: 1.2;
-    }
-    #img-caption {
-      font-size: 1.5rem;
-   }
-   h3{
-      font-size: 1.5rem;
-    }  
-     blockquote {
-     text-align: center;
-    }
-  }
-  
+}
